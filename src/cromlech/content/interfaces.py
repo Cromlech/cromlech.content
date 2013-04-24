@@ -10,6 +10,8 @@ class IFactory(Interface):
 
     description = Attribute("A brief description of the factory.")
 
+    component = Attribute("The factored component")
+
     def __call__(*args, **kw):
         """Return an instance of the object we're a factory for.
         """
