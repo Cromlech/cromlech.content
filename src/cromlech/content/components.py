@@ -35,5 +35,5 @@ class Factory(object):
             return spec
         return implementedBy(self.component)
 
-    def __repr__(self): #pragma NO COVER
+    def __repr__(self):  # pragma NO COVER
         return '<%s for %s>' % (self.__class__.__name__, repr(self.component))

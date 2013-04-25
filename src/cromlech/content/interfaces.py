@@ -29,9 +29,6 @@ class IFactory(Interface):
 class IAdding(Interface):
     """Defines an abstraction layer for a creation mechanism, the 'Adding'.
     """
-    context = Attribute("The context of the creation process")
-    request = Attribute("The HTTP request")
-
     def add(component):
         """Adds the component in the context.
         """
