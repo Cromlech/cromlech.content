@@ -1,0 +1,48 @@
+Schema directive
+================
+
+  >>> from cromlech.content import schema
+
+  >>> class Test(object):
+  ...     pass
+
+  >>> print schema.get(Test)
+  None
+
+  >>> inst = Test()
+  >>> print schema.get(inst)
+  None
+
+
+  >>> @schema('toto')
+  ... class TestWrongSchema(object):  #doctest: +NORMALIZE_WHITESPACE
+  ...    pass
+  Traceback (most recent call last):
+  ...
+  GrokkerValidationError: cromlech.content.schema directive can only use
+  interface classes. toto is not an interface class.
+
+
+  >>> from zope.interface import Interface
+
+  >>> class SchemaA(Interface):
+  ...     pass
+
+  >>> class SchemaB(Interface):
+  ...     pass
+
+
+  >>> @schema(SchemaA)
+  ... class TestWithSingleSchema(object):
+  ...     pass
+
+  >>> schema.get(TestWithSingleSchema)
+  (<InterfaceClass __main__.SchemaA>,)
+
+
+  >>> @schema(SchemaA, SchemaB)
+  ... class TestWithMultipleSchema(object):
+  ...     pass
+
+  >>> schema.get(TestWithMultipleSchema)
+  (<InterfaceClass __main__.SchemaA>, <InterfaceClass __main__.SchemaB>)

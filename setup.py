@@ -14,12 +14,14 @@ readme = text(os.path.join('src', 'cromlech', 'content', 'README.txt'))
 history = text(os.path.join('docs', 'HISTORY.txt'))
 
 install_requires = [
+    'crom',
+    'grokker',
     'setuptools',
     'zope.interface',
+    'zope.schema',
     ]
 
 tests_require = [
-    'pytest',
     ]
 
 setup(name='cromlech.content',
