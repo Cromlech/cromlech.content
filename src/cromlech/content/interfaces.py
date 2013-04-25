@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from zope.interface import Interface, Attribute
+from zope.schema import Object
 
 
 class IFactory(Interface):
@@ -23,3 +24,23 @@ class IFactory(Interface):
         this factory will provide. If the interfaces can't be resolved
         an empty iterable or None is returned instead.
         """
+
+
+class IAdding(Interface):
+    """Defines an abstraction layer for a creation mechanism, the 'Adding'.
+    """
+    context = Attribute("The context of the creation process")
+    request = Attribute("The HTTP request")
+
+    def add(component):
+        """Adds the component in the context.
+        """
+
+
+class IFactoryAdding(IAdding):
+    """An IFactoryAdding extends an IAdding by adding the notion of Factory.
+    """
+    factory = Object(
+        missing_value=None,
+        title=u"The factory generating the content.",
+        schema=IFactory)
