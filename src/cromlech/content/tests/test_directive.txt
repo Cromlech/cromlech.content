@@ -6,11 +6,11 @@ Schema directive
   >>> class Test(object):
   ...     pass
 
-  >>> print schema.get(Test)
+  >>> print(schema.get(Test))
   None
 
   >>> inst = Test()
-  >>> print schema.get(inst)
+  >>> print(schema.get(inst))
   None
 
 
@@ -19,9 +19,8 @@ Schema directive
   ...    pass
   Traceback (most recent call last):
   ...
-  GrokkerValidationError: cromlech.content.schema directive can only use
-  interface classes. toto is not an interface class.
-
+  grokker.validator.GrokkerValidationError: cromlech.content.schema
+  directive can only use interface classes. toto is not an interface class.
 
   >>> from zope.interface import Interface
 

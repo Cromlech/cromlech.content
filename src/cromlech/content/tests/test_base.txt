@@ -20,18 +20,18 @@ This test's purpose is to test a schema behavior:
   ...     def __init__(self, **kws):
   ...         cromlech.content.schematic_bootstrap(self, **kws)
 
-  >>> print Mammoth.title  # doctest: +ELLIPSIS
+  >>> print(Mammoth.title)  # doctest: +ELLIPSIS
   <zope.schema.fieldproperty.FieldProperty object at ...>
 
   >>> gunther = Mammoth()
-  >>> print gunther # doctest: +ELLIPSIS
+  >>> print(gunther)  # doctest: +ELLIPSIS
   <__main__.Mammoth object at ...>
   >>> gunther.title
-  u'Unknown'
+  'Unknown'
   
   >>> manfred = Mammoth(title=u'Manfred the Impetuous')
-  >>> print manfred  # doctest: +ELLIPSIS
+  >>> print(manfred)   # doctest: +ELLIPSIS
   <__main__.Mammoth object at ...>
 
   >>> manfred.title
-  u'Manfred the Impetuous'
+  'Manfred the Impetuous'

@@ -41,11 +41,11 @@ and the instance of the class uses the default values.
 
 It's possible, however, to give initial values to the constructor::
 
-  >>> mcBeth = Thane(age=35, thanehood=[u'Glamis', u'Cawdor'])
+  >>> mcBeth = Thane(age=35, thanehood=['Glamis', 'Cawdor'])
   >>> mcBeth.age
   35
   >>> mcBeth.thanehood
-  [u'Glamis', u'Cawdor']
+  ['Glamis', 'Cawdor']
 
 The values are verified according to the schema. Elements that are not
 part of the schema are currently skipped::
@@ -55,10 +55,10 @@ Providing a wrong type or unaccepted value will raise an error::
   >>> lennox = Thane(age='45')
   Traceback (most recent call last):
   ...
-  WrongType: ('45', (<type 'int'>, <type 'long'>), 'age')
+  zope.schema._bootstrapinterfaces.WrongType: ('45', (<class 'int'>,), 'age')
 
 Providing a non-existing field value will do nothing::
 
   >>> lady = Thane(madness=True)
-  >>> print lady
+  >>> print(lady)
   <__main__.Thane object at ...>
