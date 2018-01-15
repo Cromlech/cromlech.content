@@ -9,9 +9,9 @@ class IViking(Interface):
     """Defines a Norseman
     """
     rank = Choice(
-        title=u"Rank of the viking warrior",
-        default=u"Jarl",
-        values=[u"Bondi", u"Hersir", u"Jarl", u"Einherjar"])
+        title="Rank of the viking warrior",
+        default="Jarl",
+        values=["Bondi", "Hersir", "Jarl", "Einherjar"])
 
 
 @schema(IViking)
@@ -21,12 +21,12 @@ class Ynglingar(object):
 
 @schema(IViking)
 class JomsWarrior(object):
-    rank = u"Bondi"
+    rank = "Bondi"
 
 
 
 class Slave(JomsWarrior):
-    rank = u"Thraell"
+    rank = "Thraell"
 
 
 def test_preserve():
@@ -35,10 +35,10 @@ def test_preserve():
     schema at the class level. These values are thus preserved::
     """
     harfagri = Ynglingar()
-    assert harfagri.rank == u'Jarl'
+    assert harfagri.rank == "Jarl"
 
     gormsson = JomsWarrior()
-    assert gormsson.rank == u'Bondi'
+    assert gormsson.rank == "Bondi"
 
     gunnar = Slave()
-    assert gunnar.rank == u"Thraell"
+    assert gunnar.rank == "Thraell"

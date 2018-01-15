@@ -11,8 +11,8 @@
   ...     name='cromlech.content.tests.test_custom_factory.Baguette')
   >>> assert isinstance(joe, BakerJoe)
 
-  >>> assert joe.title == u"Joe's bakery"
-  >>> assert joe.description == u'I am a totally custom factory.'
+  >>> assert joe.title == "Joe's bakery"
+  >>> assert joe.description == 'I am a totally custom factory.'
   >>> assert list(joe.getInterfaces()) == [IBread]
 
   >>> joe = IFactory.component(
@@ -37,8 +37,8 @@ class ISweet(Interface):
 
 
 class BakerJoe(Factory):
-    title = u"Joe's bakery"
-    description = u"I am a totally custom factory."
+    title = "Joe's bakery"
+    description = "I am a totally custom factory."
 
 
 @cromlech.content.factored_component

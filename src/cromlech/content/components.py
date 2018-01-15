@@ -13,8 +13,8 @@ class Factory(object):
     The purpose of this implementation is to provide a quick way of creating
     factories for classes, functions and other objects.
     """
-    title = u''
-    description = u''
+    title = ''
+    description = ''
 
     def __init__(self, component, title=None,
                  description=None, interfaces=None):

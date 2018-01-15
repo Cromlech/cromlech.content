@@ -9,7 +9,7 @@ def text(path):
         text = f.read()
     return text
 
-version = '0.1'
+version = '0.2'
 readme = text(os.path.join('src', 'cromlech', 'content', 'README.txt'))
 history = text(os.path.join('docs', 'HISTORY.txt'))
 

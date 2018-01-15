@@ -9,9 +9,9 @@ class IMythologicalHero(Interface):
     """A hero that transcended History.
     """
     homecity = TextLine(
-        title=u"Name of the home city of the Hero",
+        title="Name of the home city of the Hero",
         required=True,
-        default=u"Babylon")
+        default="Babylon")
 
 
 @schema(IMythologicalHero)
@@ -31,5 +31,5 @@ def test_inheritage():
     """Test that inheritance keeps schema.
     """
     gilgamesh = MesopotamianGod()
-    assert gilgamesh.homecity == u'Babylon'
+    assert gilgamesh.homecity == 'Babylon'
     assert schema.get(gilgamesh) == (IMythologicalHero,)

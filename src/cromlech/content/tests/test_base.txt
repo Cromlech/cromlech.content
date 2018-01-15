@@ -9,9 +9,9 @@ This test's purpose is to test a schema behavior:
 
   >>> class TitleSchema(Interface):
   ...     title = TextLine(
-  ...         title=u'Title',
+  ...         title='Title',
   ...         required=True,
-  ...         default=u'Unknown')
+  ...         default='Unknown')
 
 
   >>> @cromlech.content.schema(TitleSchema)
@@ -29,7 +29,7 @@ This test's purpose is to test a schema behavior:
   >>> gunther.title
   'Unknown'
   
-  >>> manfred = Mammoth(title=u'Manfred the Impetuous')
+  >>> manfred = Mammoth(title='Manfred the Impetuous')
   >>> print(manfred)   # doctest: +ELLIPSIS
   <__main__.Mammoth object at ...>
 

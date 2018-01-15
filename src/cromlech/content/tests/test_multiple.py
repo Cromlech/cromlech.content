@@ -17,12 +17,12 @@ So, if defined at the class level, the attribute will not be overriden and
 the given value will be used.
 
   >>> sonja.nickname
-  u'The Red'
+  'The Red'
 
 The other attributes of our hero are still set to default.
 
   >>> sonja.armor
-  u'metal bikini'
+  'metal bikini'
 
 """
 from crom import name
@@ -35,21 +35,21 @@ class IFemaleHero(Interface):
     """A female hero, noticeable by her armor.
     """
     armor = Choice(
-        title=u"Armor",
-        values=[u'metal bikini', u'leather bikini'],
-        default=u'metal bikini')
+        title="Armor",
+        values=['metal bikini', 'leather bikini'],
+        default='metal bikini')
 
 
 class IBarbarian(Interface):
     """A barbarian. Usually only wearing a leather underpants.
     """
     kills = Int(
-        title=u"Kills !",
+        title="Kills !",
         default=100)
 
     nickname = TextLine(
-        title=u"Nickname",
-        default=u"The Barbarian")
+        title="Nickname",
+        default="The Barbarian")
 
 
 @name('female')
@@ -57,4 +57,4 @@ class IBarbarian(Interface):
 class FemaleBarbarian(object):
     """A sexy barbarian content
     """
-    nickname = u"The Red"
+    nickname = "The Red"

@@ -9,11 +9,11 @@ Defining the models
   ...     """Defines a Scotland's Thane
   ...     """
   ...     age = Int(
-  ...         title=u"Age of the Thane",
+  ...         title="Age of the Thane",
   ...         default=0)
   ...
   ...     thanehood = List(
-  ...         title=u"Names of the thane's domains",
+  ...         title="Names of the thane's domains",
   ...         value_type=TextLine(),
   ...         default=[],
   ...         required=True)

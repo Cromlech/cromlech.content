@@ -8,13 +8,13 @@ class IDescriptiveSchema(Interface):
     """A very basic descriptive schema.
     """
     title = TextLine(
-        title=u"Title",
+        title="Title",
         required=True)
 
     description = Text(
-        title=u'Description',
+        title='Description',
         required=False,
-        default=u"")
+        default="")
 
 
 class IFactory(Interface):
@@ -52,5 +52,5 @@ class IFactoryAdding(IAdding):
     """
     factory = Object(
         missing_value=None,
-        title=u"The factory generating the content.",
+        title="The factory generating the content.",
         schema=IFactory)
